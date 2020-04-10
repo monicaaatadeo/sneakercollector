@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Box List</h1>
+
+{% for box in box_list %}
+  <a href="{% url 'boxes_detail' box.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">Box</span>
+            <p>Color: {{ box.color }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %} 
