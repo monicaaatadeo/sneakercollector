@@ -3,13 +3,9 @@ from django.urls import reverse
 from datetime import date
 
 WEARS = (
-	('SU', 'Sunday'),
-	('M', 'Monday'),
-	('TU', 'Tuesday'),
-	('W', 'Wednesday'),
-	('TH', 'Thursday'),
-	('F', 'Friday'),
-	('SA', 'Saturday'),
+	('D', 'Daily'),
+	('B', 'Beaters'),
+	('S', 'Special Event'),
 )
 
 
@@ -26,9 +22,9 @@ class Box(models.Model):
 
 
 class Sneaker(models.Model):
-	name = models.CharField(max_length = 100)
-	year = models.CharField(max_length = 100)
-	designer = models.CharField(max_length = 250)
+	name = models.CharField(max_length = 500)
+	year = models.CharField(max_length = 500)
+	designer = models.CharField(max_length = 500)
 
 	boxes = models.ManyToManyField(Box)
 
@@ -39,9 +35,9 @@ class Sneaker(models.Model):
 class Wearing(models.Model):
 	date = models.DateField('Date Worn')
 	wear = models.CharField(
-		max_length = 2,
+		max_length = 3,
 		choices=WEARS,
-		default=WEARS[5][0]
+		default=WEARS[0][0]
 		
 		)
 

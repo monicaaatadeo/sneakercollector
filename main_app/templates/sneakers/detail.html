@@ -10,11 +10,7 @@
         <span class="card-title">{{ sneaker.name }}</span>
         <p>Year Released: {{ sneaker.year }}</p>
         <p>Designed By: {{ sneaker.designer }}</p>
-       <!--  {% if cat.age > 0 %}
-          <p>Age: {{ cat.age }}</p>
-        {% else %}
-          <p>Age: Kitten</p>
-        {% endif %} -->
+
       </div>
     </div>
   </div>
@@ -64,7 +60,7 @@
     setDefaultDate: true,
     autoClose: true
   });
-  let selectEl = document.getElementById('id_restore');
+  let selectEl = document.getElementById('id_wear');
   M.FormSelect.init(selectEl);
 </script>
 {% endblock %}

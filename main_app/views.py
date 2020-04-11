@@ -54,7 +54,6 @@ def assoc_box(request, sneaker_id, box_id):
 
 
 def new_sneaker(request):
-
 	if request.method == 'POST':
 
 		form = SneakerForm(request.POST)
@@ -108,7 +107,6 @@ class BoxUpdate(UpdateView):
 
 class BoxDelete(DeleteView):
 	model = Box
-
 	success_url = '/boxes/'
 
 
