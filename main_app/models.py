@@ -9,7 +9,7 @@ WEARS = (
 )
 
 class Box(models.Model):
-	color = models.CharField(max_length=20)
+	color = models.CharField(max_length=100)
 
 	def __str__(self):
 		return self.name
@@ -19,9 +19,9 @@ class Box(models.Model):
 
 
 class Sneaker(models.Model):
-	name = models.CharField(max_length = 500)
-	year = models.CharField(max_length = 500)
-	designer = models.CharField(max_length = 500)
+	name = models.CharField(max_length = 255)
+	year = models.CharField(max_length = 255)
+	designer = models.CharField(max_length = 255)
 
 	boxes = models.ManyToManyField(Box)
 
