@@ -7,10 +7,8 @@ urlpatterns = [
   path('sneakers/', views.sneakers_index, name='index'),
   path('sneakers/new/', views.new_sneaker, name='new_sneaker'),
   path('sneakers/<int:sneaker_id>/', views.sneakers_detail, name = 'detail'),
-  
   path('sneakers/<int:sneaker_id>/edit/', views.sneakers_update, name='sneakers_update'),
   path('sneakers/<int:sneaker_id>/delete/', views.sneakers_delete, name='sneakers_delete'),
-
   path('sneakers/<int:sneaker_id>/add_wearing/', views.add_wearing, name = 'add_wearing'),
   path('sneakers/<int:sneaker_id>/assoc_box/<int:box_id>/', views.assoc_box, name='assoc_box'),
   

@@ -8,8 +8,6 @@ WEARS = (
 	('S', 'Special Event'),
 )
 
-
-# Create your models here.
 class Box(models.Model):
 	color = models.CharField(max_length=20)
 
@@ -18,7 +16,6 @@ class Box(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('boxes_detail', kwargs={'pk': self.id})
-
 
 
 class Sneaker(models.Model):

@@ -20,7 +20,7 @@
       {% comment %} Cross Site Request Forgery token {% endcomment %}
       {% csrf_token %}
       {{ wearing_form.as_p }}
-      <input type="submit" class="btn" value="Wear Your Sneakers Today" />
+      <input type="submit" class="btn" value="Wear Your Sneakers" />
     </form>
 
     {% comment %} 
@@ -32,13 +32,13 @@
     {% if sneaker.wore_for_week %}
       <div class="card-panel teal-text center-align">{{sneaker.name}} has been worn at least once this week</div>
     {% else %}
-      <div class="card-panel red-text center-align">{{sneaker.name}} might be dusty</div>
-    {% endif %}
+<!--       <div class="card-panel red-text center-align">{{sneaker.name}} might be dusty</div>
+    {% endif %} -->
 
 
     <table class="striped">
       <thead>
-        <tr><th>Date</th><th>Day Worn</th></tr>
+        <tr><th>Date</th><th>Occasion Worn</th></tr>
       </thead>
       <tbody>
         {% for wearing in sneaker.wearing_set.all %}
