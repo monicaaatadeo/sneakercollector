@@ -52,6 +52,51 @@
   </div>
 </div>
 
+{% comment %} Markup for displaying associated boxes {% endcomment %}
+<hr>
+<div class="row">
+  <div class="col s6">
+    <h3>{{ sneaker.name }} Boxes</h3>
+    {% if sneaker.boxes.count %}
+      {% for box in sneaker.boxes.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              <span style="color: {{ box.color }}">{{ box.color }}</span> {{ box.name }}
+            </span>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>No Box :(</h5>
+    {% endif %}
+  </div>
+  <!-- Available toys will come after this line -->
+  <div class="col s6">
+    <h3>Available Boxes</h3>
+    {% if boxes.count %}
+      {% for box in boxes.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              <span style="color: {{ box.color }}">{{ box.color }}</span> {{ box.name }}
+            </span>
+          </div>
+          <div class="card-action">
+            <form action="{% url 'assoc_box' sneaker.id box.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">Add</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>{{sneaker.name}} Has Boxes</h5>
+    {% endif %}
+  </div>
+</div>
+
+
 <script>
   let dateEl = document.getElementById('id_date');
   M.Datepicker.init(dateEl, {
