@@ -32,7 +32,7 @@ class Sneaker(models.Model):
 class Wearing(models.Model):
 	date = models.DateField('Date Worn')
 	wear = models.CharField(
-		max_length = 3,
+		max_length = 10,
 		choices=WEARS,
 		default=WEARS[0][0]
 		
